@@ -17,3 +17,23 @@ $controller = new UsuarioController(
 
 $app->get('/usuarios', [$controller, 'listar']);
 $app->run();
+
+$app->get('/usuarios', [$controller, 'listar']);
+
+$app->get('/usuarios/{id}',
+    [$controller, 'buscar']
+);
+
+$app->post('/usuarios',
+    [$controller, 'inserir']
+);
+
+$app->put('/usuarios/{id}',
+    [$controller, 'atualizar']
+);
+
+$app->delete('/usuarios/{id}',
+    [$controller, 'excluir']
+);
+
+$app->run();
